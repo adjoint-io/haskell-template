@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 87ac8344fa06ef8bc9c9b3a7ccaf252578864143e2fa4337a1a8766b9d496b00
+
+name:           project
+version:        0.1.0
+synopsis:       Project
+description:    Project
+category:       Cryptography
+homepage:       https://github.com/adjoint-io/project#readme
+bug-reports:    https://github.com/adjoint-io/project/issues
+maintainer:     Adjoint Inc (info@adjoint.io)
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/adjoint-io/project
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_project
+  hs-source-dirs:
+      src
+  default-extensions: LambdaCase OverloadedStrings NoImplicitPrelude
+  ghc-options: -freverse-errors -Wall
+  build-depends:
+      base >=4.10 && <5
+    , protolude >=0.2 && <0.3
+  default-language: Haskell2010
+
+executable project-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_project
+  hs-source-dirs:
+      exe
+  default-extensions: LambdaCase OverloadedStrings NoImplicitPrelude
+  ghc-options: -freverse-errors -Wall -main-is Main
+  build-depends:
+      base >=4.10 && <5
+    , project
+    , protolude >=0.2 && <0.3
+  default-language: Haskell2010
+
+test-suite project-tests
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_project
+  hs-source-dirs:
+      test
+  default-extensions: LambdaCase OverloadedStrings NoImplicitPrelude
+  ghc-options: -freverse-errors -Wall -main-is Main
+  build-depends:
+      QuickCheck >=2.13 && <2.14
+    , base >=4.10 && <5
+    , project
+    , protolude >=0.2 && <0.3
+    , quickcheck-instances >=0.3 && <0.4
+    , tasty >=1.2 && <1.3
+    , tasty-discover >=4.2 && <4.3
+    , tasty-hunit >=0.10 && <0.11
+    , tasty-quickcheck >=0.10 && <0.11
+  default-language: Haskell2010

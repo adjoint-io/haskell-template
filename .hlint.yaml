@@ -1,0 +1,5 @@
+- ignore: {name: Avoid lambda}
+- ignore: {name: Eta reduce}
+- ignore: {name: Redundant lambda}
+- ignore: {name: Collapse lambdas}
+- ignore: {name: Use String}
