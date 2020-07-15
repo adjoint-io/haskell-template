@@ -8,19 +8,16 @@ on:
 
 jobs:
   build:
-    name: stack ${{ matrix.plan.resolver }}
+    name: stack $${{ matrix.os }} - ${{ matrix.plan.resolver }}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
         plan:
         - { build: stack, resolver: "lts-13"  }   # redundant because lts-14 checks ghc-8.6 already
-        - { build: stack, resolver: "lts-14"  }   # ghc-8.6.5
+        - { build: stack, resolver: "lts-14"  }
+        - { build: stack, resolver: "lts-15"  }
+        - { build: stack, resolver: "lts-16"  }
         #- { build: stack, resolver: "nightly" }
-        include: []
-        exclude:
-        - os: macOS-latest
-          plan:
-            build: cabal
 
     runs-on: ${{ matrix.os }}
     steps:
