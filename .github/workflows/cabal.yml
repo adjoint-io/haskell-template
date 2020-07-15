@@ -47,4 +47,5 @@ jobs:
         cabal update
     - name: Build
       run: |
+        cabal new-install tasty-discover
         cabal new-build
