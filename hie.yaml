@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:project"
+
+    - path: "exe/Main.hs"
+      component: "project:exe:project-exe"
+
+    - path: "test"
+      component: "project:test:project-tests"
