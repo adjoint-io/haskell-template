@@ -1,0 +1,8 @@
+packages: .
+
+tests: True
+benchmarks: False
+library-profiling: False
+
+package project
+  flags: +dev
