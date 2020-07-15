@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: stack $${{ matrix.os }} - ${{ matrix.plan.resolver }}
+    name: stack ${{ matrix.plan.resolver }} ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
